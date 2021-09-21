@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="ResolverServices" targetNamespace="http://ws.resolver.isban.mx/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:tns="http://ws.resolver.isban.mx/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://ws.resolver.isban.mx/" schemaLocation="ResolverServices_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="getPositionFromCorpID">
+    <part name="parameters" element="tns:getPositionFromCorpID">
+    </part>
+  </message>
+  <message name="getCorporateUserFromLocalID">
+    <part name="parameters" element="tns:getCorporateUserFromLocalID">
+    </part>
+  </message>
+  <message name="getCorporateUserFromLocalIDResponse">
+    <part name="parameters" element="tns:getCorporateUserFromLocalIDResponse">
+    </part>
+  </message>
+  <message name="getCommonNameFromCorpIDResponse">
+    <part name="parameters" element="tns:getCommonNameFromCorpIDResponse">
+    </part>
+  </message>
+  <message name="getCommonNameFromCorpID">
+    <part name="parameters" element="tns:getCommonNameFromCorpID">
+    </part>
+  </message>
+  <message name="getLocalUserFromCorpID">
+    <part name="parameters" element="tns:getLocalUserFromCorpID">
+    </part>
+  </message>
+  <message name="getEmailFromCorpIDResponse">
+    <part name="parameters" element="tns:getEmailFromCorpIDResponse">
+    </part>
+  </message>
+  <message name="getLocationFromCorpID">
+    <part name="parameters" element="tns:getLocationFromCorpID">
+    </part>
+  </message>
+  <message name="getLocalUserFromCorpIDResponse">
+    <part name="parameters" element="tns:getLocalUserFromCorpIDResponse">
+    </part>
+  </message>
+  <message name="getEmailFromCorpID">
+    <part name="parameters" element="tns:getEmailFromCorpID">
+    </part>
+  </message>
+  <message name="getLocationFromCorpIDResponse">
+    <part name="parameters" element="tns:getLocationFromCorpIDResponse">
+    </part>
+  </message>
+  <message name="getPositionFromCorpIDResponse">
+    <part name="parameters" element="tns:getPositionFromCorpIDResponse">
+    </part>
+  </message>
+  <portType name="ResolverConsultaServiceWS">
+    <operation name="getLocalUserFromCorpID">
+      <input message="tns:getLocalUserFromCorpID" wsam:Action="http://ws.resolver.isban.mx/ResolverConsultaServiceWS/getLocalUserFromCorpIDRequest">
+    </input>
+      <output message="tns:getLocalUserFromCorpIDResponse" wsam:Action="http://ws.resolver.isban.mx/ResolverConsultaServiceWS/getLocalUserFromCorpIDResponse">
+    </output>
+    </operation>
+    <operation name="getCorporateUserFromLocalID">
+      <input message="tns:getCorporateUserFromLocalID" wsam:Action="http://ws.resolver.isban.mx/ResolverConsultaServiceWS/getCorporateUserFromLocalIDRequest">
+    </input>
+      <output message="tns:getCorporateUserFromLocalIDResponse" wsam:Action="http://ws.resolver.isban.mx/ResolverConsultaServiceWS/getCorporateUserFromLocalIDResponse">
+    </output>
+    </operation>
+    <operation name="getPositionFromCorpID">
+      <input message="tns:getPositionFromCorpID" wsam:Action="http://ws.resolver.isban.mx/ResolverConsultaServiceWS/getPositionFromCorpIDRequest">
+    </input>
+      <output message="tns:getPositionFromCorpIDResponse" wsam:Action="http://ws.resolver.isban.mx/ResolverConsultaServiceWS/getPositionFromCorpIDResponse">
+    </output>
+    </operation>
+    <operation name="getEmailFromCorpID">
+      <input message="tns:getEmailFromCorpID" wsam:Action="http://ws.resolver.isban.mx/ResolverConsultaServiceWS/getEmailFromCorpIDRequest">
+    </input>
+      <output message="tns:getEmailFromCorpIDResponse" wsam:Action="http://ws.resolver.isban.mx/ResolverConsultaServiceWS/getEmailFromCorpIDResponse">
+    </output>
+    </operation>
+    <operation name="getLocationFromCorpID">
+      <input message="tns:getLocationFromCorpID" wsam:Action="http://ws.resolver.isban.mx/ResolverConsultaServiceWS/getLocationFromCorpIDRequest">
+    </input>
+      <output message="tns:getLocationFromCorpIDResponse" wsam:Action="http://ws.resolver.isban.mx/ResolverConsultaServiceWS/getLocationFromCorpIDResponse">
+    </output>
+    </operation>
+    <operation name="getCommonNameFromCorpID">
+      <input message="tns:getCommonNameFromCorpID" wsam:Action="http://ws.resolver.isban.mx/ResolverConsultaServiceWS/getCommonNameFromCorpIDRequest">
+    </input>
+      <output message="tns:getCommonNameFromCorpIDResponse" wsam:Action="http://ws.resolver.isban.mx/ResolverConsultaServiceWS/getCommonNameFromCorpIDResponse">
+    </output>
+    </operation>
+  </portType>
+  <binding name="ResolverServicesPortBinding" type="tns:ResolverConsultaServiceWS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="getLocalUserFromCorpID">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getCorporateUserFromLocalID">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getPositionFromCorpID">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getEmailFromCorpID">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getLocationFromCorpID">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getCommonNameFromCorpID">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="ResolverServices">
+    <port name="ResolverServicesPort" binding="tns:ResolverServicesPortBinding">
+      <soap:address location="https://srvprtbdvlmx01.dev.mx.corp:8443/ResolverWS/ResolverServices"/>
+    </port>
+  </service>
+</definitions>
