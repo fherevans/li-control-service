@@ -59,7 +59,7 @@ pipeline {
         stage ("Test de veracode") {
             steps {
                 echo 'Veracode scanning test'
-                withCredentials([usernamePassword(credentialsId: 'veracode-credentials', passwordVariable: 'VERACODE__PW', usernameVariable: 'VERACODE_USER')]) {
+                withCredentials([usernamePassword(credentialsId: 'veracode-credentials', passwordVariable: 'VERACODE_PW', usernameVariable: 'VERACODE_USER')]) {
                     veracode applicationName: 'mx-liquidezintradia-li-control-service', 
                     criticality: 'VeryHigh', 
                     fileNamePattern: '', 
