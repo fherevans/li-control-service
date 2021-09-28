@@ -68,7 +68,7 @@ pipeline {
                     sandboxName: 'Multipl-28-09', 
                     scanExcludesPattern: '', 
                     scanIncludesPattern: '*.jar', 
-                    scanName: '$buildnumber'+'$timestamp',
+                    scanName: '$buildnumber',
                     teams: '', 
                     timeout: 60, 
                     uploadIncludesPattern: 'target/li-control-service-1.0.38.jar', 
