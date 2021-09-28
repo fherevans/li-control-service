@@ -61,11 +61,13 @@ pipeline {
                 echo 'Veracode scanning test'
                 withCredentials([usernamePassword(credentialsId: 'veracode-credentials', passwordVariable: 'VERACODE_PW', usernameVariable: 'VERACODE_USER')]) {
                     veracode applicationName: 'mx-liquidezintradia-li-control-service', 
-                    criticality: 'VeryHigh', 
+                    canFailJob: true, 
+                    criticality: 'VeryHigh',
+                    debug: true,
+                    deleteIncompleteScan: true,
                     fileNamePattern: '', 
                     replacementPattern: '', 
-                    createSandbox : true,
-                    sandboxName: 'Multipl-28-09', 
+                    sandboxName: 'goose 02', 
                     scanExcludesPattern: '', 
                     scanIncludesPattern: '*.jar', 
                     scanName: '$buildnumber',
