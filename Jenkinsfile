@@ -50,7 +50,7 @@ pipeline {
                     -Dsonar.coverage.jacoco.xmlReportPaths=${BASE_PATH}/${PROJECT_ROOT}/target/site/jacoco/jacoco.xml \
                     -Dsonar.java.coveragePlugin=jacoco"
                 }
-                timeout(time: 3, unit: 'MINUTES') {
+                timeout(time: 2, unit: 'MINUTES') {
                     waitForQualityGate abortPipeline: qualityGateValidation(waitForQualityGate())
                 }                
             }
