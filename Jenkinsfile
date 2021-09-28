@@ -4,6 +4,11 @@ pipeline {
     tools {
         maven "maven-first"
     }
+    
+    parameters {
+        booleanParam(name:'executeSonarTests', defaultValue:true, description:'')
+        choice(name:'PROYECTO', choices: ['Monitor-service', 'Control-service'])
+    }
 
     environment {
         BASE_PATH = "/var/jenkins_home/workspace"
