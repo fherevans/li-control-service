@@ -19,7 +19,6 @@ pipeline {
     
     stages {
         stage('Obten Código Fuente') {
-            echo "Obteniendolo de ${params.PROYECTO}"
             steps {
                 git branch: 'develop',
                     credentialsId: '31459996-f0c4-44ad-a81b-f8d9b3e81e72',
