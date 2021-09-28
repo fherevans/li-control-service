@@ -59,8 +59,8 @@ pipeline {
         stage ("Test de veracode") {
             steps {
                 echo 'Veracode scanning test'
-                withCredentials([usernamePassword(credentialsId: 'veracode-credentials', passwordVariable: 'VERACODE_PW', usernameVariable: 'VERACODE_USER')]) {
-                    veracode applicationName: 'mx-liquidezintradia-li-control-service', 
+//                 withCredentials([usernamePassword(credentialsId: 'veracode-credentials', passwordVariable: 'VERACODE_PW', usernameVariable: 'VERACODE_USER')]) {
+//                     veracode applicationName: 'mx-liquidezintradia-li-control-service', 
                     canFailJob: true, 
                     criticality: 'VeryHigh',
                     debug: true,
@@ -74,10 +74,10 @@ pipeline {
                     teams: '', 
                     timeout: 60, 
                     uploadIncludesPattern: 'target/li-control-service-1.0.38.jar', 
-                    vid: "VERACODE_USER", 
-                    vkey: "VERACODE_PW", 
+                    vid: "ce6338a24a17e9677d162d7b6db9cbd2", 
+                    vkey: "97fb69b6cccbd792ea5ecf7c96a2f6fd153d2ddce2f5c4efd7d4f4478221b9e1f408dc13d661948c24356d7a69d24d5254eb35427686e34be265b01cb0ebe291", 
                     waitForScan: true
-                }
+//                }
             }
         }
     }
