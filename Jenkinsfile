@@ -1,5 +1,11 @@
 pipeline {
     agent any
+    environment {
+        BASE_PATH = "/var/jenkins_home/workspace"
+        PRAGMA_USER = "Gustavo Arellano"
+        PROJECT_ROOT = "li-control-service"
+        EMAIL_ADDRESS = "arellano.gustavo@gmail.com"
+    }
     stages {
         
         stage('construyendo') {
