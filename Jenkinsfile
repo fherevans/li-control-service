@@ -1,23 +1,26 @@
 pipeline {
     agent any
+  
+    tools {
+        maven "maven-first"
+    }
+
     environment {
         BASE_PATH = "/var/jenkins_home/workspace"
         PRAGMA_USER = "Gustavo Arellano"
         PROJECT_ROOT = "li-control-service"
         EMAIL_ADDRESS = "arellano.gustavo@gmail.com"
     }
+    
     stages {
+        stage('Obten Código Fuente') {
+            steps {
+                git branch: 'develop',
+                    credentialsId: '31459996-f0c4-44ad-a81b-f8d9b3e81e72',
+                    url: 'https://github.com/kebblar/li-control-service.git'
+            }
+        }
         
-        stage('construyendo') {
-            steps {
-                echo 'Construyendo.....'
-            }
-        }
-        stage('tests') {
-            steps {
-                echo 'corriendo tests...'
-            }
-        }
         stage("Corre Escaneo de Sonar") {
             environment {
                 scannerHome = tool 'sonar-scanner'
@@ -45,4 +48,15 @@ pipeline {
             
         }
     }
+    
 }
+
+def qualityGateValidation(qg) {
+    if(qg.status != 'OK') {
+        emailext body: "El código no pasó el Quality Gate de Sonar", subject: "Error Sonar Scan, Quality Gate", to: "${EMAIL_ADDRESS}"
+        return true
+    }
+    emailext body: "El código ha pasado el Quality Gate de sonar exitosamente", subject: "Info -Ejecucion pipeline", to: "${EMAIL_ADDRESS}"
+    return false
+}
+
