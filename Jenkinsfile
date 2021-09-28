@@ -74,8 +74,8 @@ pipeline {
                     teams: '', 
                     timeout: 60, 
                     uploadIncludesPattern: 'target/li-control-service-1.0.38.jar', 
-                    vid: "${VERACODE_USER}", 
-                    vkey: "${VERACODE_PW}", 
+                    vid: "VERACODE_USER", 
+                    vkey: "VERACODE_PW", 
                     waitForScan: true
                 }
             }
