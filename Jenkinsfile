@@ -7,7 +7,7 @@ pipeline {
     
     parameters {
         booleanParam(name:'executeSonarTests', defaultValue:true, description:'')
-        choice(name:'PROYECTO', choices: ['Monitor-service', 'Control-service'])
+        choice(name:'PROYECTO', choices: ['Monitor-service', 'Control-service'], description:'')
     }
 
     environment {
@@ -19,6 +19,7 @@ pipeline {
     
     stages {
         stage('Obten Código Fuente') {
+            echo "Obteniendolo de ${params.PROYECTO}"
             steps {
                 git branch: 'develop',
                     credentialsId: '31459996-f0c4-44ad-a81b-f8d9b3e81e72',
@@ -36,6 +37,11 @@ pipeline {
             }
         }
         stage("Corre Escaneo de Sonar") {
+            when {
+                expression {
+                    params.executeSonarTests
+                }
+            }
             environment {
                 scannerHome = tool 'sonar-scanner'
             }
